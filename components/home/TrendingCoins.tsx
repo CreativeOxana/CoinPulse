@@ -1,11 +1,11 @@
-import DataTable from "@/components/ui/DataTable";
-import { fetcher } from "@/coingecko.actions";
-import { cn, formatCurrency } from "@/lib/utils";
+import DataTable from "@/components/DataTable";
+import { fetcher } from "@/lib/coingecko.actions";
+import { cn, formatCurrency, formatPercentage } from "@/lib/utils";
 import { TrendingDown, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { TrendingCoinsFallback } from "./Fallback";
+import { TrendingCoinsFallback } from "../Fallback";
 
 const TrendingCoins = async () => {
   let trendingCoins;
@@ -50,7 +50,8 @@ const TrendingCoins = async () => {
               isTrendingUp ? "text-green-500" : "text-red-500"
             )}
           >
-            <p>
+            <p className="flex items-center">
+              {formatPercentage(item.data.price_change_percentage_24h.usd)}
               {isTrendingUp ? (
                 <TrendingUp width={16} height={16} />
               ) : (
