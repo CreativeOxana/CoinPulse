@@ -1,9 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
-import type { OhlcData, Time } from "lightweight-charts";
+import { Time } from "lightweight-charts";
 import { twMerge } from "tailwind-merge";
-
-// OHLC data as array: [timestamp, open, high, low, close]
-type OhlcArray = [number, number, number, number, number];
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -72,7 +69,7 @@ export function timeAgo(date: string | number | Date): string {
   return past.toISOString().split("T")[0];
 }
 
-export function convertOHLCData(data: OhlcArray[]): OhlcData[] {
+export function convertOHLCData(data: OHLCData[]) {
   return data
     .map((d) => ({
       time: d[0] as Time, // ensure seconds, not ms

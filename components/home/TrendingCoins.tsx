@@ -1,4 +1,4 @@
-import DataTable from "@/app/components/DataTable";
+import DataTable from "@/components/ui/DataTable";
 import { fetcher } from "@/coingecko.actions";
 import { cn, formatCurrency } from "@/lib/utils";
 import { TrendingDown, TrendingUp } from "lucide-react";
