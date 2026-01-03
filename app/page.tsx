@@ -9,7 +9,7 @@ import { Suspense } from "react";
 
 const Page = async () => {
   return (
-    <main className="main container">
+    <main className="main container py-4 md:py-6">
       <section className="home-grid">
         <Suspense fallback={<CoinOverviewFallback />}>
           <CoinOverview />
@@ -19,8 +19,8 @@ const Page = async () => {
           <TrendingCoins />
         </Suspense>
       </section>
-
-      <section className="w-full mt-7 space-y-4">
+      
+      <section className="w-full mt-6 md:mt-8 space-y-4">
         <Suspense fallback={<div>Loading categories...</div>}>
           <Categories />
         </Suspense>
