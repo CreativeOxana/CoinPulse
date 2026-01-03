@@ -17,7 +17,6 @@ import {
 
 import { convertOHLCData } from "@/lib/utils";
 import { fetcher } from "@/lib/coingecko.actions";
-import { config } from "process";
 
 const CandlestickChart = ({
   children,
