@@ -19,6 +19,7 @@ const Page = async () => {
           <TrendingCoins />
         </Suspense>
       </section>
+
       <section className="w-full mt-7 space-y-4">
         <Suspense fallback={<div>Loading categories...</div>}>
           <Categories />
